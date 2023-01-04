@@ -1,7 +1,7 @@
 import threading
 import grpc
-import proto.chat_pb2 as chat
-import proto.chat_pb2_grpc as rpc
+import chat_pb2 as chat
+import chat_pb2_grpc as rpc
 
 url = 'localhost'
 port = 11912
