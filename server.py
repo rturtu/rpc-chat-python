@@ -45,7 +45,11 @@ class Server(rpc.ChatServerServicer):
                 if receiver in self.messages_dict:
                     self.messages_dict[receiver].append(new_message)
             else:
-                print("The admin message format is /username message")
+                new_message = chat.Message()
+                new_message.name = "Admin"
+                new_message.message = message
+                for key in self.messages_dict:
+                    self.messages_dict[key].append(new_message)
 
 
 if __name__ == '__main__':
@@ -57,6 +61,3 @@ if __name__ == '__main__':
     server.start()
 
     chat_server.prompt()
-
-
-
